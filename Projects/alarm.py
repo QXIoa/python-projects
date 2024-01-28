@@ -2,6 +2,9 @@ import winsound, random, sys, os
 from datetime import datetime
 from waiter import Wait as wait
 
+custom_lib_path = os.path.join(os.path.dirname(__file__), '..', '..', 'CustomLibraries')
+normcus_lib_path = os.path.normpath(custom_lib_path)
+sys.path.append(normcus_lib_path)
 
 alarm_date = input('Enter the date on which you want to set the alarm: ').strip()
 alarm_time = ''.join(input("Enter the time of alarm to be set in HH:MM,AM/PM format: ").split())
