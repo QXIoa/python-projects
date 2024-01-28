@@ -11,7 +11,7 @@ alarm_time = ''.join(input("Enter the time of alarm to be set in HH:MM,AM/PM for
 music_or_beep = input("Enter m for a music or b for beep sound: ")
 
 if music_or_beep=='b':
-    dur = int(input("duration in seconds: "))*1000 #winsound takes in milliseconds
+    dur = int(input("duration in seconds: ")) * 1000 #winsound takes in milliseconds
     freq = int(input("frequency of the noise: ")) #optimal- 500
 
 alarm_hour = alarm_time[0:2]
