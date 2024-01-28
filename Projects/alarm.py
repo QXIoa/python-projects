@@ -1,6 +1,7 @@
-import winsound, random, sys, os
+import winsound, random, sys, os, random
 from datetime import datetime
 from waiter import Wait as wait
+
 
 custom_lib_path = os.path.join(os.path.dirname(__file__), '..', '..', 'CustomLibraries')
 normcus_lib_path = os.path.normpath(custom_lib_path)
@@ -10,7 +11,7 @@ alarm_date = input('Enter the date on which you want to set the alarm: ').strip(
 alarm_time = ''.join(input("Enter the time of alarm to be set in HH:MM,AM/PM format: ").split())
 music_or_beep = input("Enter m for a music or b for beep sound: ")
 
-if music_or_beep == 'b':
+if music_or_beep == 'b' or music_or_beep == 'B':
     dur = int(input("Duration in seconds: ")) * 1000 #winsound takes in milliseconds
     freq = int(input("Frequency of the noise: ")) #optimal- 500
 
@@ -35,8 +36,8 @@ while True:
         print('*'*10)
         print('| '+'Wake up!'+' |')
         print('*'*10)
-        if music_or_beep=='m':
+        if music_or_beep == 'm' or music_or_beep == 'M':
             winsound.PlaySound('audio.wav', winsound.SND_FILENAME)
         else:
-            winsound.Beep(freq,dur)
+            winsound.Beep(freq, dur)
         break
